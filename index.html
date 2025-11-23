@@ -323,7 +323,7 @@ function dropDisc(col) {
     declareWinner(activeColor);
     return;
   }
-  activeColor = activeColor === 'yellow' ? 'red' : 'yellow';
+ 
   updateActiveCard();
 }
 
@@ -373,19 +373,11 @@ function declareWinner(color){
 function startNextRound(){
   initBoard();
   updateCounts();
-  activeColor = activeColor === 'yellow' ? 'red' : 'yellow';
-  updateActiveCard();
-}
+  
+  // NU mai schimbăm culoarea automat!
+  // activeColor = activeColor === 'yellow' ? 'red' : 'yellow';
 
-function updateCounts(){
-  yellowCountEl.textContent = counts.yellow;
-  redCountEl.textContent = counts.red;
-}
-
-function updateActiveCard(){
-  yellowCard.classList.toggle('selected', activeColor==='yellow');
-  redCard.classList.toggle('selected', activeColor==='red');
-}
+  updateActiveCard();}
 
 startBtn.addEventListener('click', ()=>{
   renderTopRow();
