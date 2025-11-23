@@ -373,7 +373,7 @@ function declareWinner(color){
 function startNextRound(){
   initBoard();
   updateCounts();
-  activeColor = 'yellow';  // runda nouă începe mereu cu galben
+  activeColor = activeColor === 'yellow' ? 'red' : 'yellow';
   updateActiveCard();
 }
 
